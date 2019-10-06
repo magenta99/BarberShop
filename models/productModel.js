@@ -10,6 +10,9 @@ var productModel = new mongoose.Schema({
     priceProduct : {
         type : String
     },
+    typeProduct : {
+        type : String
+    },
     descriptionProduct :{
         type : String
     }
