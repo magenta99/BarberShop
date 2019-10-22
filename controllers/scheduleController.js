@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product')
+const Order = mongoose.model('Order')
 var express = require('express')
 var bodyParser = require('body-parser')
  

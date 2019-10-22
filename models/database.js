@@ -14,6 +14,18 @@ require('./productModel')
 require('./orderModel')
 
 const Product = mongoose.model('Product');
+const Order = mongoose.model('Order');
+
+Order.create([
+    {
+        "imageProduct":"https://firebasestorage.googleapis.com/v0/b/authenticationsms.appspot.com/o/S%C3%A1p%2FS%C3%A1p%20Bed%20Head%20for%20Men-Matt%20Separation.jpg?alt=media&token=9a4c8704-0ab2-4cb0-8aee-e55302ff6364",
+        "nameProduct":"Sáp Bed Head for Men-Matt Separation",
+        "priceProduct":"460000",
+        "fullName":"Huy Anh",
+        "phoneNumber":"0911830999",
+        "address":"Trần Duy Hưng"
+    }
+])
 
 // Product.remove({},(err)=>{
 //     console.log("complete")
