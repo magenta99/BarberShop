@@ -7,6 +7,9 @@ var orderModel = new mongoose.Schema({
     nameProduct:{
         type:String
     },
+    amountProduct: {
+        type: String
+    },
     priceProduct:{
         type:String
     },
