@@ -1,21 +1,24 @@
 var mongoose = require('mongoose')
 
 var productModel = new mongoose.Schema({
-    imageProduct :{
-        type : String
+    imageProduct: {
+        type: String
     },
-    nameProduct : {
-        type : String
+    nameProduct: {
+        type: String
     },
-    priceProduct : {
-        type : String
+    amountProduct: {
+        type: String
     },
-    typeProduct : {
-        type : String
+    priceProduct: {
+        type: String
     },
-    descriptionProduct :{
-        type : String
+    typeProduct: {
+        type: String
+    },
+    descriptionProduct: {
+        type: String
     }
 })
 
-mongoose.model('Product',productModel)
+mongoose.model('Product', productModel)

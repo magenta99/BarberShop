@@ -17,6 +17,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 router.post('/order', urlencodedParser, (req, res) => {
     var imageProduct = req.body.imageProduct;
     var nameProduct = req.body.nameProduct;
+    var amountProduct = req.body.amountProduct;
     var priceProduct = req.body.priceProduct;
     var fullName = req.body.fullName;
     var phoneNumber = req.body.phoneNumber;
@@ -26,6 +27,7 @@ router.post('/order', urlencodedParser, (req, res) => {
     {
         "imageProduct":imageProduct,
         "nameProduct":nameProduct,
+        "amountProduct":amountProduct,
         "priceProduct":priceProduct,
         "fullName":fullName,
         "phoneNumber":phoneNumber,
