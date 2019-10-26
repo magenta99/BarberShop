@@ -1,21 +1,21 @@
 const mongoose = require('mongoose');
 
 var scheduleSchema = new mongoose.Schema({
-    dateTime : {
-        type : String
+    fullName: {
+        type: String
     },
-    phoneNumber : {
-        type : String
+    phoneNumber: {
+        type: String
     },
-    place : {
-        type : String
+    day: {
+        type: String
     },
-    fullName : {
-        type : String
+    time: {
+        type: String
     },
-    services : {
-        type : String
+    place: {
+        type: String
     }
 })
 
-mongoose.model("Schedule",scheduleSchema)
+mongoose.model("Schedule", scheduleSchema)
