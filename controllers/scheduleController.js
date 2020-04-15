@@ -63,7 +63,7 @@ router.get("/result/:id", (req, res) => {
 })
 
 router.get("/location",(req,res)=>{
-    Location.find().exec((err,docs)=>{
+    Location.find((err,docs)=>{
         res.send(docs)
     })
 })
