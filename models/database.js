@@ -18,6 +18,10 @@ const Product = mongoose.model('Product');
 const Order = mongoose.model('Order');
 const Location = mongoose.model('Location');
 
+Location.remove({},(err)=>{
+    console.log("complete")
+})
+
 Location.create([
     {
         "addressLocation":"1028 Đường Láng",
@@ -57,6 +61,8 @@ Location.create([
     },
     
 ])
+
+
 
 // Order.create([
 //     {
