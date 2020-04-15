@@ -62,5 +62,11 @@ router.get("/result/:id", (req, res) => {
     })
 })
 
+router.get("/location",(req,res)=>{
+    Location.find().exec((err,docs)=>{
+        res.send(docs)
+    })
+})
+
 
 module.exports = router;
