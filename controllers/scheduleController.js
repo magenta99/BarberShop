@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Product = mongoose.model('Product')
 const Order = mongoose.model('Order')
 const Schedule = mongoose.model('Schedule')
+const Location = mongoose.model('Location')
 var express = require('express')
 var bodyParser = require('body-parser')
 
@@ -62,8 +63,8 @@ router.get("/result/:id", (req, res) => {
     })
 })
 
-router.get("/location",(req,res)=>{
-    Location.find((err,docs)=>{
+router.get("/location", (req, res) => {
+    Location.find((err, docs) => {
         res.send(docs)
     })
 })
