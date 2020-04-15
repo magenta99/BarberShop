@@ -12,9 +12,51 @@ mongoose.connect('mongodb+srv://admin:admin@database-uyoe8.mongodb.net/test?retr
 require('./scheduleModel')
 require('./productModel')
 require('./orderModel')
+require('./locationModel')
 
 const Product = mongoose.model('Product');
 const Order = mongoose.model('Order');
+const Location = mongoose.model('Location');
+
+Location.create([
+    {
+        "addressLocation":"1028 Đường Láng",
+        "districtLocation":"Đống Đa",
+        "districtDetailLocation":"P.Láng Thượng, Q.Đống Đa",
+        "cityLocation":"Hà Nội"
+    },
+    {
+        "addressLocation":"56 Nguyễn Huy Tưởng",
+        "districtLocation":"Thanh Xuân",
+        "districtDetailLocation":"P. TX Trung, Q. Thanh Xuân",
+        "cityLocation":"Hà Nội"
+    },
+    {
+        "addressLocation":"407 Trường Chinh",
+        "districtLocation":"Thanh Xuân",
+        "districtDetailLocation":"P. Khương Trung, Q. Thanh Xuân",
+        "cityLocation":"Hà Nội"
+    },
+    {
+        "addressLocation":"163 Hàng Bông",
+        "districtLocation":"Hoàn Kiếm",
+        "districtDetailLocation":"P. Hàng Bông, Q. Hoàn Kiếm",
+        "cityLocation":"Hà Nội"
+    },
+    {
+        "addressLocation":"391 Trương Định",
+        "districtLocation":"Hoàng Mai",
+        "districtDetailLocation":"P. Tân Mai, Q. Hoàng Mai",
+        "cityLocation":"Hà Nội"
+    },
+    {
+        "addressLocation":"82 Trần Đại Nghĩa",
+        "districtLocation":"Hai Bà Trưng",
+        "districtDetailLocation":"P. Đồng Tâm, Q. Hai Bà Trưng",
+        "cityLocation":"Hà Nội"
+    },
+    
+])
 
 // Order.create([
 //     {
