@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var stylistModel = new mongooseSchema({
+var stylistModel = new mongoose.Schema({
     nameStylist:{
         type:String
     },

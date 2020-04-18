@@ -13,13 +13,14 @@ require('./scheduleModel')
 require('./productModel')
 require('./orderModel')
 require('./locationModel')
-
+require('./serviceModel')
 require('./stylistModel')
 
 const Product = mongoose.model('Product');
 const Order = mongoose.model('Order');
 const Location = mongoose.model('Location');
 const Stylist = mongoose.model('Stylist');
+const Service = mongoose.model('Service');
 
 Stylist.create([
     {
@@ -33,18 +34,18 @@ Stylist.create([
 
 ])
 
-// Service.create([
-//     {
-//         "nameService":"BARBER COMBO",
-//         "detailService":"Trẻ trung hơn sau 30 phút dành riêng cho bạn với quy trình 8 bước",
-//         "priceService":"99000"
-//     },
-//     {
-//         "nameService":"VIP COMBO",
-//         "detailService":"Lịch lãm, phong độ hơn với mái tóc được uốn phồng kèm dịch vụ đắp mặt nạ",
-//         "priceService":"359000"
-//     }
-// ])
+Service.create([
+    {
+        "nameService":"BARBER COMBO",
+        "detailService":"Trẻ trung hơn sau 30 phút dành riêng cho bạn với quy trình 8 bước",
+        "priceService":"99000"
+    },
+    {
+        "nameService":"VIP COMBO",
+        "detailService":"Lịch lãm, phong độ hơn với mái tóc được uốn phồng kèm dịch vụ đắp mặt nạ",
+        "priceService":"359000"
+    }
+])
 
 // Location.remove({},(err)=>{
 //     console.log("complete")
