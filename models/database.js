@@ -13,6 +13,8 @@ require('./scheduleModel')
 require('./productModel')
 require('./orderModel')
 require('./locationModel')
+require('./serviceModel')
+require('./stylistModel')
 
 const Product = mongoose.model('Product');
 const Order = mongoose.model('Order');
