@@ -5,7 +5,7 @@ var stylistModel = new mongoose.Schema({
         type:String
     },
     ratingStylist:{
-        type:String
+        type:Float
     }
 })
 
