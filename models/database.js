@@ -17,50 +17,77 @@ require('./locationModel')
 const Product = mongoose.model('Product');
 const Order = mongoose.model('Order');
 const Location = mongoose.model('Location');
+const Service = mongoose.model('Service');
+const Stylist = mongoose.model('Stylist');
 
-Location.remove({},(err)=>{
-    console.log("complete")
-})
+Stylist.create([
+    {
+        "nameStylist":"Đào Việt Dũng",
+        "ratingStylist":"4"
+    },
+    {
+        "nameStylist":"Hoàng Đức Long",
+        "ratingStylist":"5"
+    }
 
-Location.create([
-    {
-        "addressLocation":"1028 Đường Láng",
-        "districtLocation":"Đống Đa",
-        "districtDetailLocation":"P.Láng Thượng, Q.Đống Đa",
-        "cityLocation":"Hà Nội"
-    },
-    {
-        "addressLocation":"56 Nguyễn Huy Tưởng",
-        "districtLocation":"Thanh Xuân",
-        "districtDetailLocation":"P. TX Trung, Q. Thanh Xuân",
-        "cityLocation":"Hà Nội"
-    },
-    {
-        "addressLocation":"407 Trường Chinh",
-        "districtLocation":"Thanh Xuân",
-        "districtDetailLocation":"P. Khương Trung, Q. Thanh Xuân",
-        "cityLocation":"Hà Nội"
-    },
-    {
-        "addressLocation":"163 Hàng Bông",
-        "districtLocation":"Hoàn Kiếm",
-        "districtDetailLocation":"P. Hàng Bông, Q. Hoàn Kiếm",
-        "cityLocation":"Hà Nội"
-    },
-    {
-        "addressLocation":"391 Trương Định",
-        "districtLocation":"Hoàng Mai",
-        "districtDetailLocation":"P. Tân Mai, Q. Hoàng Mai",
-        "cityLocation":"Hà Nội"
-    },
-    {
-        "addressLocation":"82 Trần Đại Nghĩa",
-        "districtLocation":"Hai Bà Trưng",
-        "districtDetailLocation":"P. Đồng Tâm, Q. Hai Bà Trưng",
-        "cityLocation":"Hà Nội"
-    },
-    
 ])
+
+Service.create([
+    {
+        "nameService":"BARBER COMBO",
+        "detailService":"Trẻ trung hơn sau 30 phút dành riêng cho bạn với quy trình 8 bước",
+        "priceService":"99000"
+    },
+    {
+        "nameService":"VIP COMBO",
+        "detailService":"Lịch lãm, phong độ hơn với mái tóc được uốn phồng kèm dịch vụ đắp mặt nạ",
+        "priceService":"359000"
+    }
+])
+
+// Location.remove({},(err)=>{
+//     console.log("complete")
+// })
+
+// Location.create([
+//     {
+//         "addressLocation":"1028 Đường Láng",
+//         "districtLocation":"Đống Đa",
+//         "districtDetailLocation":"P.Láng Thượng, Q.Đống Đa",
+//         "cityLocation":"Hà Nội"
+//     },
+//     {
+//         "addressLocation":"56 Nguyễn Huy Tưởng",
+//         "districtLocation":"Thanh Xuân",
+//         "districtDetailLocation":"P. TX Trung, Q. Thanh Xuân",
+//         "cityLocation":"Hà Nội"
+//     },
+//     {
+//         "addressLocation":"407 Trường Chinh",
+//         "districtLocation":"Thanh Xuân",
+//         "districtDetailLocation":"P. Khương Trung, Q. Thanh Xuân",
+//         "cityLocation":"Hà Nội"
+//     },
+//     {
+//         "addressLocation":"163 Hàng Bông",
+//         "districtLocation":"Hoàn Kiếm",
+//         "districtDetailLocation":"P. Hàng Bông, Q. Hoàn Kiếm",
+//         "cityLocation":"Hà Nội"
+//     },
+//     {
+//         "addressLocation":"391 Trương Định",
+//         "districtLocation":"Hoàng Mai",
+//         "districtDetailLocation":"P. Tân Mai, Q. Hoàng Mai",
+//         "cityLocation":"Hà Nội"
+//     },
+//     {
+//         "addressLocation":"82 Trần Đại Nghĩa",
+//         "districtLocation":"Hai Bà Trưng",
+//         "districtDetailLocation":"P. Đồng Tâm, Q. Hai Bà Trưng",
+//         "cityLocation":"Hà Nội"
+//     },
+    
+// ])
 
 
 
