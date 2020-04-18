@@ -22,30 +22,30 @@ const Location = mongoose.model('Location');
 const Stylist = mongoose.model('Stylist');
 const Service = mongoose.model('Service');
 
-Stylist.create([
-    {
-        "nameStylist":"Đào Việt Dũng",
-        "ratingStylist":"4"
-    },
-    {
-        "nameStylist":"Hoàng Đức Long",
-        "ratingStylist":"5"
-    }
+// Stylist.create([
+//     {
+//         "nameStylist":"Đào Việt Dũng",
+//         "ratingStylist":"4"
+//     },
+//     {
+//         "nameStylist":"Hoàng Đức Long",
+//         "ratingStylist":"5"
+//     }
 
-])
+// ])
 
-Service.create([
-    {
-        "nameService":"BARBER COMBO",
-        "detailService":"Trẻ trung hơn sau 30 phút dành riêng cho bạn với quy trình 8 bước",
-        "priceService":"99000"
-    },
-    {
-        "nameService":"VIP COMBO",
-        "detailService":"Lịch lãm, phong độ hơn với mái tóc được uốn phồng kèm dịch vụ đắp mặt nạ",
-        "priceService":"359000"
-    }
-])
+// Service.create([
+//     {
+//         "nameService":"BARBER COMBO",
+//         "detailService":"Trẻ trung hơn sau 30 phút dành riêng cho bạn với quy trình 8 bước",
+//         "priceService":"99000"
+//     },
+//     {
+//         "nameService":"VIP COMBO",
+//         "detailService":"Lịch lãm, phong độ hơn với mái tóc được uốn phồng kèm dịch vụ đắp mặt nạ",
+//         "priceService":"359000"
+//     }
+// ])
 
 // Location.remove({},(err)=>{
 //     console.log("complete")
