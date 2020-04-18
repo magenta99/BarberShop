@@ -8,4 +8,5 @@ var stylistModel = new mongooseSchema({
         type:String
     }
 })
+
 mongoose.model("Stylist",stylistModel);
