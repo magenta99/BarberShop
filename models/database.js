@@ -22,6 +22,14 @@ const Location = mongoose.model('Location');
 const Stylist = mongoose.model('Stylist');
 const Service = mongoose.model('Service');
 
+Stylist.remove({},(err)=>{
+    console.log("complete")
+})
+
+Service.remove({},(err)=>{
+    console.log("complete")
+})
+
 Stylist.create([
     {
         "nameStylist":"Đào Việt Dũng",
