@@ -84,6 +84,10 @@ router.get("/service",(req,res)=>{
     })
 })
 
-
+router.get("/order",(req,res)=>{
+    Order.find((err,docs)=>{
+        res.send(docs)
+    })
+})
 
 module.exports = router;
