@@ -60,8 +60,15 @@ router.post('/schedule', urlencodedParser, (req, res) => {
 })
 
 router.get("/result/:id", (req, res) => {
-    var id = req.params.id;
+    var id = req.params.id ;
     Product.find({ typeProduct: id }).exec((err, docs) => {
+        res.send(docs)
+    })
+})
+
+router.get("/result/asc/:id", (req, res) => {
+    var id = req.params.id ;
+    Product.find({ typeProduct: id }).sort({priceProduct: 1}).exec((err, docs) => {
         res.send(docs)
     })
 })
