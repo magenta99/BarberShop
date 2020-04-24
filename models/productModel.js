@@ -15,6 +15,9 @@ var productModel = new mongoose.Schema({
     },
     descriptionProduct :{
         type : String
+    },
+    ratingProduct:{
+        type : String
     }
 })
 
