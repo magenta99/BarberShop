@@ -134,7 +134,8 @@ Product.create([
             "nameProduct": "Sáp Volcanic Clay - Giữ nếp bất chấp",
             "priceProduct": "340000",
             "typeProduct": "Sáp",
-            "descriptionProduct": "Apestomen là một thương hiệu về các sản phẩm chăm sóc tóc và tạo kiểu tóc dành cho nam giới hàng đầu tại Singapore. Không chỉ \"chế ngự\" được mồ hôi dầu mà còn ít bị tác động bởi ngoại cảnh. Vì thế dù nắng hay mưa thì Apestomen Volcanic Clay vẫn sẽ giúp tóc bạn giữ nếp đẹp chuẩn cả ngày."
+            "descriptionProduct": "Apestomen là một thương hiệu về các sản phẩm chăm sóc tóc và tạo kiểu tóc dành cho nam giới hàng đầu tại Singapore. Không chỉ \"chế ngự\" được mồ hôi dầu mà còn ít bị tác động bởi ngoại cảnh. Vì thế dù nắng hay mưa thì Apestomen Volcanic Clay vẫn sẽ giúp tóc bạn giữ nếp đẹp chuẩn cả ngày.",
+            "ratingProduct":"4"
           },
           {
             "imageProduct": "https://firebasestorage.googleapis.com/v0/b/authenticationsms.appspot.com/o/S%C3%A1p%2FS%C3%A1p%20Glanzen%20Clay.jpg?alt=media&token=8fed22ff-5da9-4fb5-b908-088cbdf946f6",
