@@ -72,14 +72,14 @@ router.get("/result", (req, res) => {
 })
 
 
-router.get("/result/asc/:id", (req, res) => {
+router.get("/result/asc", (req, res) => {
     var id = req.query.id ;
     Product.find({ typeProduct: id }).sort({priceProduct: 1}).exec((err, docs) => {
         res.send(docs)
     })
 })
 
-router.get("/result/dsc/:id", (req, res) => {
+router.get("/result/dsc", (req, res) => {
     var id = req.query.id ;
     Product.find({ typeProduct: id }).sort({priceProduct: -1}).exec((err, docs) => {
         res.send(docs)
