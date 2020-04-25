@@ -60,8 +60,8 @@ router.post('/schedule', urlencodedParser, (req, res) => {
 })
 
 router.get("/result/:type", (req, res) => {
-    var typeProduct = req.query.typeProduct ;
-    Product.find({ typeProduct: typeProduct }).exec((err, docs) => {
+    var type = req.query.type ;
+    Product.find({ typeProduct: type }).exec((err, docs) => {
         res.send(docs)
     })
 })
