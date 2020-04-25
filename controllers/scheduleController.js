@@ -59,8 +59,13 @@ router.post('/schedule', urlencodedParser, (req, res) => {
     ])
 })
 
-router.get("/result/:id", (req, res) => {
-    var id = req.params.id ;
+router.get("/result", (req, res) => {
+    var id = req.query.id ;
+    if(!id){
+        res.send("VUi long khong de trong id");
+        //nếu có lỗi thì dừng luôn
+        return;
+    }
     Product.find({ typeProduct: id }).exec((err, docs) => {
         res.send(docs)
     })
