@@ -71,16 +71,15 @@ router.get("/result", (req, res) => {
     })
 })
 
-//Sắp xếp tăng dần
-router.get("/result/asc", (req, res) => {
+
+router.get("/result/asc/:id", (req, res) => {
     var id = req.query.id ;
     Product.find({ typeProduct: id }).sort({priceProduct: 1}).exec((err, docs) => {
         res.send(docs)
     })
 })
 
-//Sắp xếp giảm dần
-router.get("/result/asc", (req, res) => {
+router.get("/result/dsc/:id", (req, res) => {
     var id = req.query.id ;
     Product.find({ typeProduct: id }).sort({priceProduct: -1}).exec((err, docs) => {
         res.send(docs)
