@@ -71,9 +71,18 @@ router.get("/result", (req, res) => {
     })
 })
 
-router.get("/result/asc/:id", (req, res) => {
-    var id = req.params.id ;
+//Sắp xếp tăng dần
+router.get("/result/asc", (req, res) => {
+    var id = req.query.id ;
     Product.find({ typeProduct: id }).sort({priceProduct: 1}).exec((err, docs) => {
+        res.send(docs)
+    })
+})
+
+//Sắp xếp giảm dần
+router.get("/result/asc", (req, res) => {
+    var id = req.query.id ;
+    Product.find({ typeProduct: id }).sort({priceProduct: -1}).exec((err, docs) => {
         res.send(docs)
     })
 })
