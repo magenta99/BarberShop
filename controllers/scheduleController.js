@@ -61,8 +61,7 @@ router.post('/schedule', urlencodedParser, (req, res) => {
 
 router.get("/result", (req, res) => {
     var id = req.query.id ;
-    var name = req.query.name;
-    if(!id || !name){
+    if(!id){
         res.send("VUi long khong de trong id");
         //nếu có lỗi thì dừng luôn
         return;
@@ -70,10 +69,20 @@ router.get("/result", (req, res) => {
     Product.find({ typeProduct: id }).exec((err, docs) => {
         res.send(docs)
     })
-    Product.find({nameProduct: name}).exec((err,docs)=>{
+})
+
+router.get("/searchProduct", (req, res) => {
+    var name = req.query.name ;
+    if(!name){
+        res.send("VUi long khong de trong tên sản phẩm");
+        //nếu có lỗi thì dừng luôn
+        return;
+    }
+    Product.find({ nameProduct: name }).exec((err, docs) => {
         res.send(docs)
     })
 })
+
 
 //Sắp xếp sản phẩm tăng dần
 router.get("/result/asc", (req, res) => {
