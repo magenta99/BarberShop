@@ -62,7 +62,7 @@ router.post('/schedule', urlencodedParser, (req, res) => {
 router.get("/result", (req, res) => {
     var id = req.query.id ;
     var name = req.query.name;
-    if(!id){
+    if(!id || !name){
         res.send("VUi long khong de trong id");
         //nếu có lỗi thì dừng luôn
         return;
