@@ -61,6 +61,7 @@ router.post('/schedule', urlencodedParser, (req, res) => {
 
 router.get("/result", (req, res) => {
     var id = req.query.id ;
+    var name = req.query.name;
     if(!id){
         res.send("VUi long khong de trong id");
         //nếu có lỗi thì dừng luôn
@@ -69,9 +70,12 @@ router.get("/result", (req, res) => {
     Product.find({ typeProduct: id }).exec((err, docs) => {
         res.send(docs)
     })
+    Product.find({nameProduct: name}).exec((err,docs)=>{
+        res.send(docs)
+    })
 })
 
-
+//Sắp xếp sản phẩm tăng dần
 router.get("/result/asc", (req, res) => {
     var id = req.query.id ;
     Product.find({ typeProduct: id }).sort({priceProduct: 1}).exec((err, docs) => {
@@ -79,12 +83,17 @@ router.get("/result/asc", (req, res) => {
     })
 })
 
+//Sắp xếp sản phẩm giảm dần
 router.get("/result/dsc", (req, res) => {
     var id = req.query.id ;
     Product.find({ typeProduct: id }).sort({priceProduct: -1}).exec((err, docs) => {
         res.send(docs)
     })
 })
+
+
+
+
 
 router.get("/location", (req, res) => {
     Location.find((err, docs) => {
