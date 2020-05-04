@@ -24,6 +24,10 @@ const Stylist = mongoose.model('Stylist');
 const Service = mongoose.model('Service');
 const User = mongoose.model('User');
 
+User.remove({}, (err) => {
+    console.log("complete")
+})
+
 User.create([
     {
         "nameUser": "Đào Việt Dũng",
