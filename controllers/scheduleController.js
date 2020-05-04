@@ -62,8 +62,8 @@ router.post('/schedule', urlencodedParser, (req, res) => {
 })
 
 router.get("/result", (req, res) => {
-    var id = req.query.id ;
-    if(!id){
+    var id = req.query.id;
+    if (!id) {
         res.send("VUi long khong de trong id");
         //nếu có lỗi thì dừng luôn
         return;
@@ -74,8 +74,8 @@ router.get("/result", (req, res) => {
 })
 
 router.get("/searchProduct", (req, res) => {
-    var name = req.query.name ;
-    if(!name){
+    var name = req.query.name;
+    if (!name) {
         res.send("VUi long khong de trong tên sản phẩm");
         //nếu có lỗi thì dừng luôn
         return;
@@ -88,22 +88,19 @@ router.get("/searchProduct", (req, res) => {
 
 //Sắp xếp sản phẩm tăng dần
 router.get("/result/asc", (req, res) => {
-    var id = req.query.id ;
-    Product.find({ typeProduct: id }).sort({priceProduct: 1}).exec((err, docs) => {
+    var id = req.query.id;
+    Product.find({ typeProduct: id }).sort({ priceProduct: 1 }).exec((err, docs) => {
         res.send(docs)
     })
 })
 
 //Sắp xếp sản phẩm giảm dần
 router.get("/result/dsc", (req, res) => {
-    var id = req.query.id ;
-    Product.find({ typeProduct: id }).sort({priceProduct: -1}).exec((err, docs) => {
+    var id = req.query.id;
+    Product.find({ typeProduct: id }).sort({ priceProduct: -1 }).exec((err, docs) => {
         res.send(docs)
     })
 })
-
-
-
 
 
 router.get("/location", (req, res) => {
@@ -112,27 +109,39 @@ router.get("/location", (req, res) => {
     })
 })
 
-router.get("/stylist",(req,res)=>{
-    Stylist.find((err,docs)=>{
+router.get("/stylist", (req, res) => {
+    Stylist.find((err, docs) => {
         res.send(docs)
     })
 })
 
-router.get("/service",(req,res)=>{
-    Service.find((err,docs)=>{
+router.get("/service", (req, res) => {
+    Service.find((err, docs) => {
         res.send(docs)
     })
 })
 
-router.get("/order",(req,res)=>{
-    Order.find((err,docs)=>{
+router.get("/order", (req, res) => {
+    Order.find((err, docs) => {
         res.send(docs)
     })
 })
 
-router.get("/user",(req,res)=>{
-    User.find((err,docs)=>{
+router.get("/user", (req, res) => {
+    User.find((err, docs) => {
         res.send(docs)
+    })
+})
+
+router.post("/updateUser", (req, res) => {
+    var name = req.query.name;
+    var phoneUser = req.query.phoneUser;
+    User.updateOne({ phoneUser: phoneUser }, { nameUser: name }, (err, docs) => {
+            if(!err){
+                res.send("Sửa thành công")
+            }else{
+                res.send("Lỗi cmnr")
+            }
     })
 })
 
