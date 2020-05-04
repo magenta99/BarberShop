@@ -7,6 +7,7 @@ const Schedule = mongoose.model('Schedule')
 const Location = mongoose.model('Location')
 const Stylist = mongoose.model('Stylist')
 const Service = mongoose.model('Service')
+const User = mongoose.model('User')
 
 var express = require('express')
 var bodyParser = require('body-parser')
@@ -125,6 +126,12 @@ router.get("/service",(req,res)=>{
 
 router.get("/order",(req,res)=>{
     Order.find((err,docs)=>{
+        res.send(docs)
+    })
+})
+
+router.get("/user",(req,res)=>{
+    User.find((err,docs)=>{
         res.send(docs)
     })
 })
