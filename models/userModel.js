@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
 
 var userModel = new mongoose.Schema({
-    nameUser:{
-        type:String
+    nameUser: {
+        type: String
     },
-    phoneUser:{
-        type:String
+    phoneUser: {
+        type: String
+    }
 })
 
-mongoose.model("User",userModel);
+mongoose.model("User", userModel);
