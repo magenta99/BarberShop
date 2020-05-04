@@ -15,12 +15,25 @@ require('./orderModel')
 require('./locationModel')
 require('./serviceModel')
 require('./stylistModel')
+require('./userModel')
 
 const Product = mongoose.model('Product');
 const Order = mongoose.model('Order');
 const Location = mongoose.model('Location');
 const Stylist = mongoose.model('Stylist');
 const Service = mongoose.model('Service');
+const User = mongoose.model('User');
+
+User.create([
+    {
+        "nameUser": "Đào Việt Dũng",
+        "phoneUser": "0911830496"
+    },
+    {
+        "nameUser": "Lê Huy Anh",
+        "phoneUser": "0973535353"
+    }
+])
 
 // Stylist.remove({}, (err) => {
 //     console.log("complete")
