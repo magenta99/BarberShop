@@ -44,13 +44,13 @@ router.post('/order', urlencodedParser, (req, res) => {
 })
 
 router.post('/bookingSchedule', urlencodedParser, (req, res) => {
-    var idSchedule = req.body.idSchedule;
-    var locationSchedule = req.body.locationSchedule;
-    var timeSchedule = req.body.timeSchedule;
-    var dateSchedule = req.body.dateSchedule;
-    var serviceSchedule = req.body.serviceSchedule;
-    var statusSchedule = req.body.statusSchedule;
-    var stylistSchedule = req.body.stylistSchedule;
+    var idSchedule = req.query.idSchedule;
+    var locationSchedule = req.query.locationSchedule;
+    var timeSchedule = req.query.timeSchedule;
+    var dateSchedule = req.query.dateSchedule;
+    var serviceSchedule = req.query.serviceSchedule;
+    var statusSchedule = req.query.statusSchedule;
+    var stylistSchedule = req.query.stylistSchedule;
 
     Schedule.create([
         {
