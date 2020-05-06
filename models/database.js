@@ -25,6 +25,10 @@ const Service = mongoose.model('Service');
 const User = mongoose.model('User');
 const Schedule = mongoose.model('Schedule');
 
+Schedule.remove({}, (err) => {
+    console.log("complete")
+})
+
 Schedule.create([
     {
         "idSchedule": "121212121212",
