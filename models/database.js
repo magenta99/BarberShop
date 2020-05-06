@@ -24,20 +24,20 @@ const Stylist = mongoose.model('Stylist');
 const Service = mongoose.model('Service');
 const User = mongoose.model('User');
 
-User.remove({}, (err) => {
-    console.log("complete")
-})
+// User.remove({}, (err) => {
+//     console.log("complete")
+// })
 
-User.create([
-    {
-        "nameUser": "Đào Việt Dũng",
-        "phoneUser": "0911830496"
-    },
-    {
-        "nameUser": "Lê Huy Anh",
-        "phoneUser": "0973535353"
-    }
-])
+// User.create([
+//     {
+//         "nameUser": "Đào Việt Dũng",
+//         "phoneUser": "0911830496"
+//     },
+//     {
+//         "nameUser": "Lê Huy Anh",
+//         "phoneUser": "0973535353"
+//     }
+// ])
 
 // Stylist.remove({}, (err) => {
 //     console.log("complete")

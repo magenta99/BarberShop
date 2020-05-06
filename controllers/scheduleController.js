@@ -43,22 +43,29 @@ router.post('/order', urlencodedParser, (req, res) => {
     ])
 })
 
-router.post('/schedule', urlencodedParser, (req, res) => {
-    var fullName = req.body.fullName;
-    var phoneNumber = req.body.phoneNumber;
-    var day = req.body.day;
-    var time = req.body.time;
-    var place = req.body.place;
+router.post('/bookingSchedule', urlencodedParser, (req, res) => {
+    var idSchedule = req.query.idSchedule;
+    var locationSchedule = req.query.locationSchedule;
+    var timeSchedule = req.query.timeSchedule;
+    var dateSchedule = req.query.dateSchedule;
+    var serviceSchedule = req.query.serviceSchedule;
+    var statusSchedule = req.query.statusSchedule;
+    var stylistSchedule = req.query.stylistSchedule;
 
-    Schedule.create([
-        {
-            "fullName": fullName,
-            "phoneNumber": phoneNumber,
-            "day": day,
-            "time": time,
-            "place": place
+    if (!idSchedule || !locationSchedule || !timeSchedule || !dateSchedule || !serviceSchedule || !statusSchedule || !stylistSchedule) {
+        res.send("Vui lòng nhập đủ thông tin")
+    } else {
+        Schedule.create([{
+            "idSchedule": idSchedule,
+            "locationSchedule": locationSchedule,
+            "timeSchedule": timeSchedule,
+            "dateSchedule": dateSchedule,
+            "serviceSchedule": serviceSchedule,
+            "stylistSchedule": stylistSchedule,
+            "statusSchedule": statusSchedule
         }
-    ])
+        ])
+    }
 })
 
 router.get("/result", (req, res) => {
@@ -137,11 +144,11 @@ router.post("/updateUser", (req, res) => {
     var name = req.query.name;
     var phoneUser = req.query.phoneUser;
     User.updateOne({ phoneUser: phoneUser }, { nameUser: name }, (err, docs) => {
-            if(!err){
-                res.send("Sửa thành công")
-            }else{
-                res.send("Lỗi cmnr")
-            }
+        if (!err) {
+            res.send("Sửa thành công")
+        } else {
+            res.send("Lỗi cmnr")
+        }
     })
 })
 

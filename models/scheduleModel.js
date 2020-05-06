@@ -1,20 +1,27 @@
 const mongoose = require('mongoose');
 
 var scheduleSchema = new mongoose.Schema({
-    fullName: {
+    idSchedule: {
         type: String
     },
-    phoneNumber: {
+    locationSchedule: {
         type: String
     },
-    day: {
+    timeSchedule: {
         type: String
     },
-    time: {
+    dateSchedule: {
         type: String
     },
-    place: {
+    stylistSchedule: {
         type: String
+    },
+    serviceSchedule: {
+        type: String
+    }
+    ,
+    statusSchedule: {
+        type: Boolean
     }
 })
 
