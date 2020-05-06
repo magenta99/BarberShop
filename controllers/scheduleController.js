@@ -52,10 +52,8 @@ router.post('/bookingSchedule', urlencodedParser, (req, res) => {
     var statusSchedule = req.query.statusSchedule;
     var stylistSchedule = req.query.stylistSchedule;
 
-    if (!idSchedule || !locationSchedule || !timeSchedule || !dateSchedule || !serviceSchedule || !statusSchedule || !stylistSchedule) {
-        res.send("Vui lòng nhập đủ thông tin")
-    } else {
-        Schedule.create([{
+    Schedule.create([
+        {
             "idSchedule": idSchedule,
             "locationSchedule": locationSchedule,
             "timeSchedule": timeSchedule,
@@ -64,8 +62,8 @@ router.post('/bookingSchedule', urlencodedParser, (req, res) => {
             "stylistSchedule": stylistSchedule,
             "statusSchedule": statusSchedule
         }
-        ])
-    }
+    ])
+
 })
 
 router.get("/result", (req, res) => {

@@ -18,8 +18,7 @@ var scheduleSchema = new mongoose.Schema({
     },
     serviceSchedule: {
         type: String
-    }
-    ,
+    },
     statusSchedule: {
         type: Boolean
     }
