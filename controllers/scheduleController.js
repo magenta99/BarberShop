@@ -63,7 +63,6 @@ router.post('/bookingSchedule', urlencodedParser, (req, res) => {
             "statusSchedule": statusSchedule
         }
     ])
-
 })
 
 router.get("/result", (req, res) => {
