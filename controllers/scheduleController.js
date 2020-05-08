@@ -64,10 +64,10 @@ router.post('/bookingSchedule', urlencodedParser, (req, res) => {
             "serviceSchedule": serviceSchedule,
             "statusSchedule": statusSchedule
         }
-    ],(err)=>{
-        if(!err){
+    ], (err) => {
+        if (!err) {
             res.send("thêm thành công")
-        }else{
+        } else {
             res.send(err)
         }
     })
@@ -88,6 +88,18 @@ router.post('/addUser', urlencodedParser, (req, res) => {
         res.send('Thêm người dùng thành công')
     }
 
+})
+
+//Tìm tên người dùng theo SĐT
+router.post('/findNameUser', urlencodedParser, (req, res) => {
+    var phoneUser = req.query.phoneUser;
+    if (!phoneUser) {
+        res.send("Vui lòng nhập đủ thông tin")
+    } else {
+        User.findOne({ phoneNumber: phoneNumber }, (err, res) => {
+            res.send("res")
+        })
+    }
 })
 
 //Sửa tên người dùng theo SĐT
