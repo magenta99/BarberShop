@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 var scheduleSchema = new mongoose.Schema({
-    idSchedule: {
+    nameSchedule: {
+        type: String
+    },
+    phoneSchedule: {
         type: String
     },
     locationSchedule: {

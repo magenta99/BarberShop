@@ -44,22 +44,24 @@ router.post('/order', urlencodedParser, (req, res) => {
 })
 
 router.post('/bookingSchedule', urlencodedParser, (req, res) => {
-    var idSchedule = req.query.idSchedule;
+    var nameSchedule = req.query.nameSchedule;
+    var phoneSchedule = req.query.phoneSchedule;
     var locationSchedule = req.query.locationSchedule;
     var timeSchedule = req.query.timeSchedule;
     var dateSchedule = req.query.dateSchedule;
+    var stylistSchedule = req.query.stylistSchedule;
     var serviceSchedule = req.query.serviceSchedule;
     var statusSchedule = req.query.statusSchedule;
-    var stylistSchedule = req.query.stylistSchedule;
 
     Schedule.create([
         {
-            "idSchedule": idSchedule,
+            "nameSchedule": nameSchedule,
+            "phoneSchedule": phoneSchedule,
             "locationSchedule": locationSchedule,
             "timeSchedule": timeSchedule,
             "dateSchedule": dateSchedule,
-            "serviceSchedule": serviceSchedule,
             "stylistSchedule": stylistSchedule,
+            "serviceSchedule": serviceSchedule,
             "statusSchedule": statusSchedule
         }, (err) => {
             if (!err) {
@@ -67,8 +69,32 @@ router.post('/bookingSchedule', urlencodedParser, (req, res) => {
             }
         }
     ])
+})
 
-    res.send("Thêm thành công")
+router.post('/addUser', urlencodedParser, (req, res) => {
+    var nameUser = req.query.nameUser;
+    var phoneUser = req.query.phoneUser;
+
+    if(!nameUser && !phoneUser){
+        User.create([{
+            "nameUser": nameUser,
+            "phoneUser": phoneUser
+        }])
+        res.send('Thêm người dùng thành công')
+    }
+})
+
+//Sửa tên người dùng theo SĐT
+router.post("/updateUser", (req, res) => {
+    var name = req.query.name;
+    var phoneUser = req.query.phoneUser;
+    User.updateOne({ phoneUser: phoneUser }, { nameUser: name }, (err, docs) => {
+        if (!err) {
+            res.send("Sửa thành công")
+        } else {
+            res.send("Lỗi cmnr")
+        }
+    })
 })
 
 router.get("/result", (req, res) => {
@@ -143,16 +169,6 @@ router.get("/user", (req, res) => {
     })
 })
 
-router.post("/updateUser", (req, res) => {
-    var name = req.query.name;
-    var phoneUser = req.query.phoneUser;
-    User.updateOne({ phoneUser: phoneUser }, { nameUser: name }, (err, docs) => {
-        if (!err) {
-            res.send("Sửa thành công")
-        } else {
-            res.send("Lỗi cmnr")
-        }
-    })
-})
+
 
 module.exports = router;

@@ -25,21 +25,21 @@ const Service = mongoose.model('Service');
 const User = mongoose.model('User');
 const Schedule = mongoose.model('Schedule');
 
-Schedule.remove({}, (err) => {
-    console.log("complete")
-})
+// Schedule.remove({}, (err) => {
+//     console.log("complete")
+// })
 
-Schedule.create([
-    {
-        "idSchedule": "121212121212",
-        "locationSchedule": "TTH",
-        "timeSchedule" :"10h00",
-        "dateSchedule" :"6/1/20202",
-        "serviceSchedule" :"Server1",
-        "stylistSchedule" :"Huy",
-        "statusSchedule" :false,
-    }
-])
+// Schedule.create([
+//     {
+//         "idSchedule": "121212121212",
+//         "locationSchedule": "TTH",
+//         "timeSchedule" :"10h00",
+//         "dateSchedule" :"6/1/20202",
+//         "serviceSchedule" :"Server1",
+//         "stylistSchedule" :"Huy",
+//         "statusSchedule" :false,
+//     }
+// ])
 
 
 // User.remove({}, (err) => {
