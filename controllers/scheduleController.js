@@ -76,13 +76,16 @@ router.post('/addUser', urlencodedParser, (req, res) => {
     var nameUser = req.query.nameUser;
     var phoneUser = req.query.phoneUser;
 
-    if (!nameUser && !phoneUser) {
+    if (!nameUser || !phoneUser) {
+        res.send('Vui lòng nhập đủ thông tin')
+    } else {
         User.create([{
             "nameUser": nameUser,
             "phoneUser": phoneUser
         }])
         res.send('Thêm người dùng thành công')
     }
+
 })
 
 //Sửa tên người dùng theo SĐT
