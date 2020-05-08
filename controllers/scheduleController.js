@@ -63,10 +63,6 @@ router.post('/bookingSchedule', urlencodedParser, (req, res) => {
             "stylistSchedule": stylistSchedule,
             "serviceSchedule": serviceSchedule,
             "statusSchedule": statusSchedule
-        }, (err) => {
-            if (!err) {
-                res.send("Thêm thành công")
-            }
         }
     ])
 })
