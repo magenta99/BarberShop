@@ -71,11 +71,12 @@ router.post('/bookingSchedule', urlencodedParser, (req, res) => {
     ])
 })
 
+//Thêm người dùng
 router.post('/addUser', urlencodedParser, (req, res) => {
     var nameUser = req.query.nameUser;
     var phoneUser = req.query.phoneUser;
 
-    if(!nameUser && !phoneUser){
+    if (!nameUser && !phoneUser) {
         User.create([{
             "nameUser": nameUser,
             "phoneUser": phoneUser
