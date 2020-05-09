@@ -97,7 +97,8 @@ router.post('/findNameUser', urlencodedParser, (req, res) => {
         res.send("Vui lòng nhập đủ thông tin")
     } else {
         User.findOne({ phoneUser: phoneUser }, (err, docs) => {
-            res.send(docs)
+            var nameUser = docs.nameUser
+            res.send(nameUser);
         })
     }
 })
