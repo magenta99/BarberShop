@@ -39,6 +39,7 @@ Schedule.create([
         "serviceSchedule" :"Server1",
         "stylistSchedule" :"Huy",
         "statusSchedule" :false,
+        "imageSchedule" : "aaaa"
     }
 ])
 

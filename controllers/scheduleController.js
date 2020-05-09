@@ -52,6 +52,7 @@ router.post('/bookingSchedule', urlencodedParser, (req, res) => {
     var stylistSchedule = req.query.stylistSchedule;
     var serviceSchedule = req.query.serviceSchedule;
     var statusSchedule = req.query.statusSchedule;
+    var imageSchedule = req.query.imageSchedule;
 
     Schedule.create([
         {
@@ -62,7 +63,8 @@ router.post('/bookingSchedule', urlencodedParser, (req, res) => {
             "dateSchedule": dateSchedule,
             "stylistSchedule": stylistSchedule,
             "serviceSchedule": serviceSchedule,
-            "statusSchedule": statusSchedule
+            "statusSchedule": statusSchedule,
+            "imageSchedule": imageSchedule
         }
     ], (err) => {
         if (!err) {

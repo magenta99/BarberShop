@@ -24,6 +24,9 @@ var scheduleSchema = new mongoose.Schema({
     },
     statusSchedule: {
         type: Boolean
+    },
+    imageSchedule: {
+        type: String
     }
 })
 
