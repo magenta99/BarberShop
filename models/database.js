@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://admin:admin@database-uyoe8.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true }, (err) => {
+mongoose.connect('mongodb+srv://admin:admin@database-uyoe8.mongodb.net/test?retryWrites=true&w=majority', {
+useNewUrlParser: true,
+useUnifiedTopology: true,
+useCreateIndex: true}, (err) => {
     if (!err) {
         console.log('Connect Database Success');
 
@@ -17,12 +20,6 @@ require('./serviceModel')
 require('./stylistModel')
 require('./userModel')
 
-const Product = mongoose.model('Product');
-const Order = mongoose.model('Order');
-const Location = mongoose.model('Location');
-const Stylist = mongoose.model('Stylist');
-const Service = mongoose.model('Service');
-const User = mongoose.model('User');
 const Schedule = mongoose.model('Schedule');
 
 Schedule.remove({}, (err) => {

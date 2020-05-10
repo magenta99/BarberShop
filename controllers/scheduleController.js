@@ -118,46 +118,46 @@ router.post("/updateUser", (req, res) => {
     })
 })
 
-router.get("/result", (req, res) => {
-    var id = req.query.id;
-    if (!id) {
-        res.send("VUi long khong de trong id");
-        //nếu có lỗi thì dừng luôn
-        return;
-    }
-    Product.find({ typeProduct: id }).exec((err, docs) => {
-        res.send(docs)
-    })
-})
+// router.get("/result", (req, res) => {
+//     var id = req.query.id;
+//     if (!id) {
+//         res.send("VUi long khong de trong id");
+//         //nếu có lỗi thì dừng luôn
+//         return;
+//     }
+//     Product.find({ typeProduct: id }).exec((err, docs) => {
+//         res.send(docs)
+//     })
+// })
 
-router.get("/searchProduct", (req, res) => {
-    var name = req.query.name;
-    if (!name) {
-        res.send("VUi long khong de trong tên sản phẩm");
-        //nếu có lỗi thì dừng luôn
-        return;
-    }
-    Product.find({ nameProduct: name }).exec((err, docs) => {
-        res.send(docs)
-    })
-})
+// router.get("/searchProduct", (req, res) => {
+//     var name = req.query.name;
+//     if (!name) {
+//         res.send("VUi long khong de trong tên sản phẩm");
+//         //nếu có lỗi thì dừng luôn
+//         return;
+//     }
+//     Product.find({ nameProduct: name }).exec((err, docs) => {
+//         res.send(docs)
+//     })
+// })
 
 
-//Sắp xếp sản phẩm tăng dần
-router.get("/result/asc", (req, res) => {
-    var id = req.query.id;
-    Product.find({ typeProduct: id }).sort({ priceProduct: 1 }).exec((err, docs) => {
-        res.send(docs)
-    })
-})
+// //Sắp xếp sản phẩm tăng dần
+// router.get("/result/asc", (req, res) => {
+//     var id = req.query.id;
+//     Product.find({ typeProduct: id }).sort({ priceProduct: 1 }).exec((err, docs) => {
+//         res.send(docs)
+//     })
+// })
 
-//Sắp xếp sản phẩm giảm dần
-router.get("/result/dsc", (req, res) => {
-    var id = req.query.id;
-    Product.find({ typeProduct: id }).sort({ priceProduct: -1 }).exec((err, docs) => {
-        res.send(docs)
-    })
-})
+// //Sắp xếp sản phẩm giảm dần
+// router.get("/result/dsc", (req, res) => {
+//     var id = req.query.id;
+//     Product.find({ typeProduct: id }).sort({ priceProduct: -1 }).exec((err, docs) => {
+//         res.send(docs)
+//     })
+// })
 
 
 router.get("/location", (req, res) => {
